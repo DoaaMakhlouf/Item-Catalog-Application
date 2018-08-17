@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+
+<h2>Add Movie to {{category.name}} Category</h2>
+</br>
+
+<form action="{{url_for('addNewItem', category_name = category.name)}}" method="post">
+
+<h3>Title:</h3>
+<input type="text" name="title">
+
+<h3>Storyline:</h3>
+<textarea name="storyline"></textarea>
+
+</br>
+</br>
+<input type="submit" value="Add"> | <a href="{{url_for('showCategoryItems',
+                                    category_name = category.name)}}">Cancel</a>
+
+</form>
+
+{% endblock %}

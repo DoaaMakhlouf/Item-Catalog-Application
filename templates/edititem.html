@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+
+<h2>Edit Movie in {{category.name}} Category</h2>
+</br>
+
+<form action="{{url_for('editItem', category_name=category.name, item_name=item.name)}}" method="post">
+
+<h3>Title:</h3>
+<input type="text">
+
+<h3>Storyline:</h3>
+<textarea></textarea>
+
+</br>
+</br>
+<input type="submit" value="Edit"> |
+<a href="{{url_for('showItemDetails', category_name = category.name, item_name = item.name)}}">Cancel</a>
+
+</form>
+
+{% endblock %}

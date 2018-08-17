@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block content %}
+
+<h3>{{category.name}}: {{item.name}}</h3>
+<p> <strong>Storyline:</strong> {{item.description}} </p>
+
+{% if loggedIn %}
+  <a href="{{url_for('editItem', category_name = category.name, item_name = item.name)}}">Edit</a> |
+  <a href="{{url_for('deleteItem', category_name = category.name, item_name = item.name)}}">Delete</a>
+{% endif %}
+
+{% endblock %}
